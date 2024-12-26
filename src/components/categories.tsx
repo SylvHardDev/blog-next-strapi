@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import Category from "./Category";
 
-const categories = () => {
+const Categories = () => {
   return (
-    <div>categories</div>
-  )
-}
+    <div className="flex gap-6 mb-8">
+      <div>
+        <Category />
+        <Category />
+        <Category />
+        <Category />
+      </div>
+    </div>
+  );
+};
 
-export default categories
+export default Categories;
