@@ -1,8 +1,12 @@
+import Categories from "../components/Categories";
+
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Hello Ngiah
-    </main>
+    <div className="flex gap-6 mb-8">
+      <div>
+        <Categories />
+      </div>
+    </div>
   );
 }
