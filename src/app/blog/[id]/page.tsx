@@ -23,9 +23,13 @@ async function fetchBlogs(id: number) {
 
 const page = async ({ params }: any) => {
   const blog = await fetchBlogs(params.id);
+  console.log(params)
   console.log(blog);
+  
+  // const imageUrl = "http://127.0.0.1:1337" + blog.image.formats.url
+  // console.log(imageUrl);
 
-  const imageUrl = "http://127.0.0.1:1337" + blog.image.url
+
 
 
   return (
@@ -35,7 +39,7 @@ const page = async ({ params }: any) => {
         <Image
           layout="fill"
           objectFit="cover"
-          src={imageUrl}
+          src={""}
           alt={blog.title}
         />
       </div>
