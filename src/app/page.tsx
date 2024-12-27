@@ -29,7 +29,7 @@ async function fetchBlogs() {
     const response = await res.json()
     return response
   } catch (err) {
-    console.log(err)
+    console.error(err)
   }
 }
 
