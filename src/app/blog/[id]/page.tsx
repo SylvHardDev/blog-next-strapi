@@ -2,6 +2,23 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+async function fetchBlogs(id: number) {
+    const options = {
+      header: {
+        Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+      },
+    };
+  
+    try {
+      const res = await fetch(`http://127.0.0.1:1337/api/blogs/${id}?populate=*`, options);
+      const response = await res.json()
+      return response
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  
 const page = () => {
   return (
     <div className="max-w-3xl mx-auto p-4">
