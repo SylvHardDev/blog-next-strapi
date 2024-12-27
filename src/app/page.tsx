@@ -25,7 +25,7 @@ async function fetchBlogs() {
   };
 
   try {
-    const res = await fetch("http://127.0.0.1:1337/api/blogs", options);
+    const res = await fetch("http://127.0.0.1:1337/api/blogs?populate=*", options);
     const response = await res.json()
     return response
   } catch (err) {
@@ -36,11 +36,12 @@ async function fetchBlogs() {
 export default async function Home() {
 
   const categories = await  fetchCategories()
+  const blogs = await  fetchBlogs()
 
   return (
     <div>
       <Categories categories = {categories} />
-      <Blogs />
+      <Blogs blogs = {blogs}/>
     </div>
   );
 }
