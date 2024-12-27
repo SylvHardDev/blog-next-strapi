@@ -4,11 +4,11 @@ import Category from "./Category";
 const Categories = ({ categories }: any) => {
   return (
     <div className="flex gap-6 mb-8">
-      {categories?.data?.map((Category: any) => {
-        <div>
-          <Category cat={Category}/>
-        </div>;
-      })}
+      {categories?.data?.map((category: any) => (
+        <div key={category.id}>
+          <Category cat={category} />
+        </div>
+      ))}
     </div>
   );
 };
